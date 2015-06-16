@@ -1,7 +1,7 @@
 {
   "name": "jr-test",
-  "version": "0.0.0",
-  "description": "Small description for jr-test goes here",
+  "version": "0.3.3",
+  "description": "Example ember-cli application using ember-jsonapi-resources addon",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -12,11 +12,11 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "git@github.com:pixelhandler/jr-test.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Bill Heaton <pixelhandler@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -31,7 +31,10 @@
     "ember-cli-qunit": "0.3.13",
     "ember-cli-uglify": "^1.0.1",
     "ember-disable-proxy-controllers": "^1.0.0",
-    "ember-export-application-global": "^1.0.2",
-    "ember-jsonapi-resources": "0.3.0"
+    "ember-export-application-global": "^1.0.2"
+  },
+  "dependencies": {
+    "ember-buffered-proxy": "0.5.0",
+    "ember-jsonapi-resources": "^0.3.3"
   }
 }
