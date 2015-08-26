@@ -5,7 +5,7 @@ moduleFor('serializer:comment', 'Unit | Serializer | comment', {
   beforeEach() {
     Resource.prototype.container = this.container;
     let opts = { instantiate: false, singleton: false };
-    this.container.register('model:comments', Resource, opts);
+    this.registry.register('model:comments', Resource, opts);
   },
   afterEach() {
     delete Resource.prototype.container;

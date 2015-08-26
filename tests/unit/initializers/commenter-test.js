@@ -2,7 +2,7 @@ import Ember from 'ember';
 import { initialize } from '../../../initializers/commenter';
 import { module, test } from 'qunit';
 
-var registry, application;
+var registry, application, factories, injections;
 
 module('Unit | Initializer | commenter', {
   beforeEach: function() {
@@ -11,22 +11,42 @@ module('Unit | Initializer | commenter', {
       registry = application.registry;
       application.deferReadiness();
     });
+    application = stub(application);
+  },
+  afterEach: function() {
+    factories = null;
+    injections = null;
+    application = null;
+    registry = null;
   }
 });
 
-// Replace this with your real tests.
-test('it works', function(assert) {
+test('it registers commenters factories: model, service, adapter, serializer; injects: service, serializer', function(assert) {
   initialize(registry, application);
 
-  let model = registry.lookupFactory('model:commenters');
-  assert.ok(model);
-
-  let service = registry.lookupFactory('service:commenters');
-  assert.ok(service);
-
-  let adapter = registry.lookupFactory('adapter:commenters');
-  assert.ok(adapter);
-
-  let serializer = registry.lookupFactory('serializer:commenters');
-  assert.ok(serializer);
+  let registered = Ember.A(factories.mapBy('name'));
+  assert.ok(registered.contains('model:commenters'), 'model:commenters registered');
+  assert.ok(registered.contains('service:commenters'), 'service:commenters registered');
+  assert.ok(registered.contains('adapter:commenters'), 'adapter:commenters registered');
+  assert.ok(registered.contains('serializer:commenters'), 'serializer:commenters registered');
+  let msg = 'briefs injected into service:store';
+  assert.equal(injections.findBy('factory', 'service:store').property, 'commenters', msg);
+  msg = 'serializer injected into service:commenters';
+  assert.equal(injections.findBy('factory', 'service:commenters').property, 'serializer', msg);
 });
+
+function stub(app) {
+  factories = Ember.A([]);
+  injections = Ember.A([]);
+  app.register = function(name, factory) {
+    factories.push({name: name, factory: factory});
+  };
+  app.inject = function(factory, property, injection) {
+    injections.push({
+      factory: factory,
+      property: property,
+      injection: injection
+    });
+  };
+  return app;
+}

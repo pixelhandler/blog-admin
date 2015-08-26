@@ -6,7 +6,7 @@ moduleFor('model:comment', 'Unit | Model | comment', {
     const opts = { instantiate: false, singleton: false };
     Resource.prototype.container = this.container;
     // Use a non-standard name, i.e. pluralized instead of singular
-    this.container.register('model:comments', Resource, opts);
+    this.registry.register('model:comments', Resource, opts);
   },
   afterEach() {
     delete Resource.prototype.container;

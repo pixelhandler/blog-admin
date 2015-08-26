@@ -5,7 +5,7 @@ moduleFor('serializer:post', 'Unit | Serializer | post', {
   beforeEach() {
     Resource.prototype.container = this.container;
     let opts = { instantiate: false, singleton: false };
-    this.container.register('model:posts', Resource, opts);
+    this.registry.register('model:posts', Resource, opts);
   },
   afterEach() {
     delete Resource.prototype.container;

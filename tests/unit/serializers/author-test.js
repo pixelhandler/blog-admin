@@ -5,7 +5,7 @@ moduleFor('serializer:author', 'Unit | Serializer | author', {
   beforeEach() {
     Resource.prototype.container = this.container;
     let opts = { instantiate: false, singleton: false };
-    this.container.register('model:authors', Resource, opts);
+    this.registry.register('model:authors', Resource, opts);
   },
   afterEach() {
     delete Resource.prototype.container;
