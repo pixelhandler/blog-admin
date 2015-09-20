@@ -1,6 +1,6 @@
 {
   "name": "jr-test",
-  "version": "0.6.2",
+  "version": "0.7.1",
   "description": "Example ember-cli application using ember-jsonapi-resources addon",
   "private": true,
   "directories": {
@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "ember-buffered-proxy": "^0.5.1",
-    "ember-jsonapi-resources": "^0.6.2"
+    "ember-jsonapi-resources": "^0.7.1"
   }
 }
