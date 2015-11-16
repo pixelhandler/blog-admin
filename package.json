@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "ember-buffered-proxy": "^0.5.1",
-    "ember-jsonapi-resources": "^0.7.1"
+    "ember-jsonapi-resources": "^0.7.8"
   }
 }
