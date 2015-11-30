@@ -1,16 +1,6 @@
-import Service from '../services/comments';
-import Model from '../models/comment';
-import Adapter from '../adapters/comment';
-import Serializer from '../serializers/comment';
-
-export function initialize(registry, application) {
-  application.register('model:comments', Model, { instantiate: false, singleton: false });
-  application.register('service:comments', Service);
-  application.register('adapter:comments', Adapter);
-  application.register('serializer:comments', Serializer);
-
+export function initialize(application) {
   application.inject('service:store', 'comments', 'service:comments');
-  application.inject('service:comments', 'serializer', 'serializer:comments');
+  application.inject('service:comments', 'serializer', 'serializer:comment');
 }
 
 export default {

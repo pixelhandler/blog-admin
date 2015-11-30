@@ -1,16 +1,6 @@
-import Service from '../services/posts';
-import Model from '../models/post';
-import Adapter from '../adapters/post';
-import Serializer from '../serializers/post';
-
-export function initialize(registry, application) {
-  application.register('model:posts', Model, { instantiate: false, singleton: false });
-  application.register('service:posts', Service);
-  application.register('adapter:posts', Adapter);
-  application.register('serializer:posts', Serializer);
-
+export function initialize(application) {
   application.inject('service:store', 'posts', 'service:posts');
-  application.inject('service:posts', 'serializer', 'serializer:posts');
+  application.inject('service:posts', 'serializer', 'serializer:post');
 }
 
 export default {
