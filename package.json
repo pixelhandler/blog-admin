@@ -1,6 +1,6 @@
 {
   "name": "jr-test",
-  "version": "0.10.0",
+  "version": "1.0.0-beta.3",
   "description": "Example ember-cli application using ember-jsonapi-resources addon",
   "private": true,
   "directories": {
@@ -33,17 +33,21 @@
     "ember-cli-path-utils": "1.0.0",
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.8",
+    "ember-cli-showdown": "2.5.0",
     "ember-cli-sri": "^1.2.0",
     "ember-cli-string-utils": "1.0.0",
     "ember-cli-test-info": "1.0.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-inflector": "1.9.3",
-    "ember-jsonapi-resources": "0.11.0",
-    "inflection": "1.7.2",
-    "lodash": "3.10.1",
-    "silent-error": "1.0.0"
+    "ember-inflector": "~1.9.3",
+    "ember-jsonapi-resources": "1.0.0-beta.3",
+    "glob": "^4.5.3",
+    "http-proxy": "^1.12.0",
+    "inflection": "~1.7.2",
+    "lodash": "~3.10.1",
+    "morgan": "^1.6.1",
+    "silent-error": "^1.0.0"
   },
   "dependencies": {
     "ember-buffered-proxy": "^0.5.1"

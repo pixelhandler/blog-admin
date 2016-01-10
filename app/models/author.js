@@ -6,8 +6,7 @@ export default Resource.extend({
   type: 'authors',
   service: Ember.inject.service('authors'),
 
-  name: attr('string'),
-  email: attr('string'),
-
-  posts: hasMany('posts')
+  "name": attr('string'),
+  "email": attr('string'),
+  "posts": hasMany('posts')
 });

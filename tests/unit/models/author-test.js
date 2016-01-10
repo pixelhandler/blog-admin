@@ -1,19 +1,21 @@
 import { moduleFor, test } from 'ember-qunit';
-import Resource from '../../../models/author';
+import Model from '../../../models/author';
+import Ember from 'ember';
 
 moduleFor('model:author', 'Unit | Model | author', {
+  // Specify the other units that are required for this test.
+  needs: [],
   beforeEach() {
-    const opts = { instantiate: false, singleton: false };
-    Resource.prototype.container = this.container;
-    // Use a non-standard name, i.e. pluralized instead of singular
-    this.registry.register('model:authors', Resource, opts);
+    let opts = { instantiate: false, singleton: false };
+    this.registry.register('model:author', Model, opts);
   },
   afterEach() {
-    delete Resource.prototype.container;
+    this.registry.unregister('model:author');
   }
 });
 
-test('it exists', function(assert) {
-  var model = this.container.lookupFactory('model:authors').create();
+test('authors has "type" property set to: authors', function(assert) {
+  let owner = (typeof Ember.getOwner === 'function') ? Ember.getOwner(this) : this.container;
+  let model = owner.lookup('model:author').create();
   assert.equal(model.get('type'), 'authors', 'resource has expected type');
 });

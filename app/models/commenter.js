@@ -6,9 +6,8 @@ export default Resource.extend({
   type: 'commenters',
   service: Ember.inject.service('commenters'),
 
-  name: attr('string'),
-  email: attr('string'),
-  hash: attr(),
-
-  comments: hasMany('comments')
+  "name": attr('string'),
+  "email": attr('string'),
+  "hash": attr(),
+  "comments": hasMany('comments')
 });

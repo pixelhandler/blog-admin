@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import { initialize } from '../../../initializers/author';
+import AuthorInitializer from '../../../initializers/author';
 import { module, test } from 'qunit';
 
-var registry, application, factories, injections;
+let registry, application, factories, injections;
 
 module('Unit | Initializer | author', {
   beforeEach: function() {
@@ -21,15 +21,12 @@ module('Unit | Initializer | author', {
   }
 });
 
-test('it registers authors factories: model, service, adapter, serializer; injects: service, serializer', function(assert) {
-  initialize(registry, application);
+test('it registers authors factory: model, injects into: service, serializer', function(assert) {
+  AuthorInitializer.initialize(registry, application);
 
   let registered = Ember.A(factories.mapBy('name'));
-  assert.ok(registered.contains('model:authors'), 'model:authors registered');
-  assert.ok(registered.contains('service:authors'), 'service:authors registered');
-  assert.ok(registered.contains('adapter:authors'), 'adapter:authors registered');
-  assert.ok(registered.contains('serializer:authors'), 'serializer:authors registered');
-  let msg = 'briefs injected into service:store';
+  assert.ok(registered.contains('model:author'), 'model:author registered');
+  let msg = 'authors injected into service:store';
   assert.equal(injections.findBy('factory', 'service:store').property, 'authors', msg);
   msg = 'serializer injected into service:authors';
   assert.equal(injections.findBy('factory', 'service:authors').property, 'serializer', msg);

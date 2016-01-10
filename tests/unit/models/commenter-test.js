@@ -1,19 +1,21 @@
 import { moduleFor, test } from 'ember-qunit';
-import Resource from '../../../models/commenter';
+import Model from '../../../models/commenter';
+import Ember from 'ember';
 
 moduleFor('model:commenter', 'Unit | Model | commenter', {
+  // Specify the other units that are required for this test.
+  needs: ['model:comment'],
   beforeEach() {
-    const opts = { instantiate: false, singleton: false };
-    Resource.prototype.container = this.container;
-    // Use a non-standard name, i.e. pluralized instead of singular
-    this.registry.register('model:commenters', Resource, opts);
+    let opts = { instantiate: false, singleton: false };
+    this.registry.register('model:commenter', Model, opts);
   },
   afterEach() {
-    delete Resource.prototype.container;
+    this.registry.unregister('model:commenter');
   }
 });
 
-test('it exists', function(assert) {
-  var model = this.container.lookupFactory('model:commenters').create();
+test('commenters has "type" property set to: commenters', function(assert) {
+  let owner = (typeof Ember.getOwner === 'function') ? Ember.getOwner(this) : this.container;
+  let model = owner.lookup('model:commenter').create();
   assert.equal(model.get('type'), 'commenters', 'resource has expected type');
 });

@@ -11,7 +11,7 @@ A Manual test of using the https://github.com/pixelhandler/ember-jsonapi-resourc
 
 ## Running / Development
 
-* `ember server --proxy http://api.pixelhandler.com`
+* `ember server` (an http-proxy is setup to use http://api.pixelhandler.com)
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ## Prerequisites

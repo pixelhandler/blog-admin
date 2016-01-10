@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import { initialize } from '../../../initializers/commenter';
+import CommenterInitializer from '../../../initializers/commenter';
 import { module, test } from 'qunit';
 
-var registry, application, factories, injections;
+let registry, application, factories, injections;
 
 module('Unit | Initializer | commenter', {
   beforeEach: function() {
@@ -21,15 +21,12 @@ module('Unit | Initializer | commenter', {
   }
 });
 
-test('it registers commenters factories: model, service, adapter, serializer; injects: service, serializer', function(assert) {
-  initialize(registry, application);
+test('it registers commenters factory: model, injects into: service, serializer', function(assert) {
+  CommenterInitializer.initialize(registry, application);
 
   let registered = Ember.A(factories.mapBy('name'));
-  assert.ok(registered.contains('model:commenters'), 'model:commenters registered');
-  assert.ok(registered.contains('service:commenters'), 'service:commenters registered');
-  assert.ok(registered.contains('adapter:commenters'), 'adapter:commenters registered');
-  assert.ok(registered.contains('serializer:commenters'), 'serializer:commenters registered');
-  let msg = 'briefs injected into service:store';
+  assert.ok(registered.contains('model:commenter'), 'model:commenter registered');
+  let msg = 'commenters injected into service:store';
   assert.equal(injections.findBy('factory', 'service:store').property, 'commenters', msg);
   msg = 'serializer injected into service:commenters';
   assert.equal(injections.findBy('factory', 'service:commenters').property, 'serializer', msg);

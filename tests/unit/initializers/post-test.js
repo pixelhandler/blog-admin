@@ -1,8 +1,8 @@
 import Ember from 'ember';
-import { initialize } from '../../../initializers/post';
+import PostInitializer from '../../../initializers/post';
 import { module, test } from 'qunit';
 
-var registry, application, factories, injections;
+let registry, application, factories, injections;
 
 module('Unit | Initializer | post', {
   beforeEach: function() {
@@ -21,15 +21,12 @@ module('Unit | Initializer | post', {
   }
 });
 
-test('it registers posts factories: model, service, adapter, serializer; injects: service, serializer', function(assert) {
-  initialize(registry, application);
+test('it registers posts factory: model, injects into: service, serializer', function(assert) {
+  PostInitializer.initialize(registry, application);
 
   let registered = Ember.A(factories.mapBy('name'));
-  assert.ok(registered.contains('model:posts'), 'model:posts registered');
-  assert.ok(registered.contains('service:posts'), 'service:posts registered');
-  assert.ok(registered.contains('adapter:posts'), 'adapter:posts registered');
-  assert.ok(registered.contains('serializer:posts'), 'serializer:posts registered');
-  let msg = 'briefs injected into service:store';
+  assert.ok(registered.contains('model:post'), 'model:post registered');
+  let msg = 'posts injected into service:store';
   assert.equal(injections.findBy('factory', 'service:store').property, 'posts', msg);
   msg = 'serializer injected into service:posts';
   assert.equal(injections.findBy('factory', 'service:posts').property, 'serializer', msg);

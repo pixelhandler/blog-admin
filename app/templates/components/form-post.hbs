@@ -42,9 +42,9 @@
   </small>
   <hr>
   <div class="intro">
-    {{resource.excerpt}}
+    {{markdown-to-html markdown=resource.excerpt}}
   </div>
   <div class="below-the-fold">
-    {{resource.body}}
+    {{markdown-to-html markdown=resource.body}}
   </div>
 {{/if}}

@@ -9,7 +9,7 @@
 <hr>
 
 {{#if model.excerpt}}
-  {{model.excerpt}}
+  {{markdown-to-html markdown=model.excerpt}}
 {{/if}}
 
 {{outlet "comments"}}
