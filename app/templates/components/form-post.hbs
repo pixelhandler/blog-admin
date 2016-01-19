@@ -19,6 +19,11 @@
       {{input type="text" value=resource.title name="title"}}
     </p>
     {{#if isNew}}
+      <p class="Admin-form-slug">
+        <label>Slug:</label>
+        <br>
+        {{input type="text" value=resource.slug name="slug"}}
+      </p>
       <p class="Admin-form-date">
         <label>Date:</label>
         <br>
@@ -29,6 +34,11 @@
       <label>Excerpt: [Markdown]</label>
       <br>
       {{textarea type="text" value=resource.excerpt name="excerpt"}}
+    </p>
+    <p class="Admin-form-body">
+      <label>Body: [Markdown]</label>
+      <br>
+      {{textarea type="text" value=resource.body name="body"}}
     </p>
   </div>
 {{else}}

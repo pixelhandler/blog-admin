@@ -1,7 +1,7 @@
 /*jshint node:true*/
 var proxyPath = '/api';
 var apiServerUrl = 'http://api.pixelhandler.com';
-apiServerUrl = 'http://localhost:3000';
+//apiServerUrl = 'http://localhost:3000';
 
 module.exports = function(app) {
   // For options, see:
