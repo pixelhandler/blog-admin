@@ -26,9 +26,15 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    /*
+      Don't do this…
+      See: https://github.com/emberjs/ember.js/issues/12791#issuecomment-170675020
+
     error(error) {
       Ember.Logger.error(error);
+      this.intermediateTransitionTo('application_error', e)
     }
+    */
   }
 });
 

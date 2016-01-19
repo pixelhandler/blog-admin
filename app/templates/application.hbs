@@ -1,5 +1,11 @@
 <h2 id="title">Ember JSON API Resources Test App</h2>
 
+{{#if errorMessage}}
+  <button class="error-message" {{action 'dismissErrorMessage'}}>
+    {{errorMessage}} {{errorDetails}}
+  </button>
+{{/if}}
+
 {{outlet}}
 
 <h4>Nav</h4>

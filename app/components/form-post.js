@@ -15,9 +15,12 @@ export default Ember.Component.extend({
     if (!this.get('isNew')) {
       this.get('resource').applyChanges();
       this.set('isEditing', false);
-      this.get('on-edit')(this.get('post')).finally(function() {
-        this.set('isEditing', true);
-      }.bind(this));
+      let action = this.get('on-edit');
+      if (typeof action === 'function') {
+        action(this.get('post'), function callback() {
+          this.set('isEditing', true);
+        }.bind(this));
+      }
     }
   },
 

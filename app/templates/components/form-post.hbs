@@ -8,6 +8,11 @@
   <hr>
   {{! form for editing the resource attributes }}
   <div class="Admin-form">
+    <p class="Admin-form-oops">
+      <label>Oops:</label><small><em>(This field will error)</em></small>
+      <br>
+      {{input type="text" value=resource.oops name="oops"}}
+    </p>
     <p class="Admin-form-title">
       <label>Title:</label>
       <br>

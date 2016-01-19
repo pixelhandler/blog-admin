@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ApplicationErrorsMixin from 'jr-test/mixins/application-errors';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ApplicationErrorsMixin, {
   beforeModel() {
     return this.store.find('authors').then(function (authors) {
       this.set('authors', authors);
@@ -28,6 +29,9 @@ export default Ember.Route.extend({
         collection = this.modelFor('index');
         if (collection) { collection.addObject(resp); }
         this.transitionTo('admin.index');
+      }.bind(this))
+      .catch(function(error) {
+        this.handleCreateError(error);
       }.bind(this));
     },
 
@@ -38,5 +42,16 @@ export default Ember.Route.extend({
 
   deactivate() {
     this.modelFor('admin.create').destroy();
+  },
+
+  handleCreateError(error) {
+    let doTransitionToError = true;
+    if (error.code === 422 || error.code === 400) {
+      doTransitionToError = false;
+      this.handleApplicationError(error);
+    }
+    if (doTransitionToError) {
+      this.intermediateTransitionTo('application_error', error);
+    }
   }
 });

@@ -1,6 +1,6 @@
 {
   "name": "jr-test",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Example ember-cli application using ember-jsonapi-resources addon",
   "private": true,
   "directories": {
@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
-    "ember-cli": "1.13.13",
+    "ember-cli": "~1.13.14",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-babel": "^5.1.5",
     "ember-cli-content-security-policy": "0.4.0",
@@ -41,7 +41,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-inflector": "~1.9.3",
-    "ember-jsonapi-resources": "1.0.0-beta.3",
+    "ember-jsonapi-resources": "~1.0.3",
     "glob": "^4.5.3",
     "http-proxy": "^1.12.0",
     "inflection": "~1.7.2",
