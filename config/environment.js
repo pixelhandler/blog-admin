@@ -22,7 +22,7 @@ module.exports = function(environment) {
       API_PATH: 'api/v1',
     },
     contentSecurityPolicy: {
-      'connect-src': "'self' api.pixelhandler.com localhost:4200 localhost:3000 0.0.0.0:3000",
+      'connect-src': "'self' api.pixelhandler.com localhost:4200 localhost:3001 0.0.0.0:3001",
       'img-src': "'self' www.gravatar.com"
     }
   };
