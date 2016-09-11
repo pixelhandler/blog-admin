@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  //this.route('application-error');
+  this.route('post', { path: '/:post_id' }, function () {
+    this.route('detail', { path: '/' });
+  });
+  //this.route('post-error');
 });
 
 export default Router;

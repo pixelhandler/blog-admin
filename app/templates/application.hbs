@@ -1,0 +1,16 @@
+<h2 id="title">Ember JSON API Resources Test App</h2>
+
+{{#if errorMessage}}
+  <button class="error-message" {{action 'dismissErrorMessage'}}>
+    {{errorMessage}} {{errorDetails}}
+  </button>
+{{/if}}
+
+{{outlet}}
+
+<h4>Nav</h4>
+<ul class="Blog-nav-list">
+  <li class="Blog-nav-list-item">{{link-to 'Home' 'index'}}</li>
+  <li class="Blog-nav-list-item">{{!link-to 'Edit' 'admin.index'}}</li>
+  <li class="Blog-nav-list-item">{{!link-to 'Write' 'admin.create'}}</li>
+</ul>

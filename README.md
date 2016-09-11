@@ -26,6 +26,40 @@ Generate some resources:
     ember generate jsonapi-resource commenter name:string \
       email:string hash comments:has-many:comments
 
+Setup a proxy to a live API:
+
+    ember generate http-proxy api https://pixelhandler.com
+
+Setup the host and API path config:
+
+    vim config/environment.js
+
+```
+     APP: {
+       // Here you can pass flags/options to your application instance
+       // when it is created
++      API_HOST: 'https://pixelhandler.com',
++      API_PATH: 'api/v1'
+     }
+```
+
+Install an addon to use Markdown syntax:
+
+    ember install ember-cli-showdown
+
+Generate some routes and templates:
+
+    ember generate route application
+    ember generate route application-error
+    ember generate route index
+    ember generate route post
+    ember generate route post-error
+    ember generate route post/detail
+    ember generate template post/comments
+
+Need a controller for comments in named outlet:
+
+    ember generate controller post/comments
 
 
 ## Prerequisites
