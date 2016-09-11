@@ -16,6 +16,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      API_HOST: '', // same as '/'
+      API_PATH: 'api/v1'
+      //API_HOST_PROXY: 'https://pixelhandler.com/'
     }
   };
 

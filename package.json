@@ -40,13 +40,15 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-export-application-global": "^1.0.5",
     "ember-inflector": "^1.9.6",
-    "ember-jsonapi-resources": "1.4.0",
+    "ember-jsonapi-resources": "^1.4.0",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "ember-welcome-page": "^1.0.1",
+    "glob": "^4.5.3",
+    "http-proxy": "^1.14.0",
     "inflection": "1.7.2",
     "loader.js": "^4.0.1",
     "lodash": "^3.10.1",
+    "morgan": "^1.7.0",
     "silent-error": "^1.0.1"
   }
 }
