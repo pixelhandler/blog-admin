@@ -1,7 +1,32 @@
 # Blog-admin
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Steps used to setup this repo as a test for using ember-jsonapi-resources addon:
+
+    ember new blog-admin
+    cd blog-admin
+    npm rm ember-data --save-dev
+    ember install ember-jsonapi-resources
+
+If working on ember-jsonapi-resources locally use npm link:
+
+    npm link ember-jsonapi-resources
+
+Generate some resources:
+
+    ember generate jsonapi-resource post title:string slug:string date \
+      excerpt:string body:string author:has-one:author \
+      comments:has-many:comments
+
+    ember generate jsonapi-resource author name:string email:string \
+      posts:has-many:posts
+
+    ember generate jsonapi-resource comment body:string \
+      post:has-one:post commenter:has-one:commenter
+
+    ember generate jsonapi-resource commenter name:string \
+      email:string hash comments:has-many:comments
+
+
 
 ## Prerequisites
 
