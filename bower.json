@@ -1,0 +1,10 @@
+{
+  "name": "blog-admin",
+  "dependencies": {
+    "ember": "~2.8.0",
+    "ember-cli-shims": "0.1.1",
+    "fetch": "^1.0.0",
+    "es6-promise": "^3.2.2",
+    "showdown": "^1.4.3"
+  }
+}
