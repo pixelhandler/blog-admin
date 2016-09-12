@@ -12,6 +12,13 @@ Router.map(function() {
     this.route('detail', { path: '/' });
   });
   //this.route('post-error');
+
+  this.route('admin', function() {
+    this.route('create');
+    this.route('edit');
+    this.route('edit', { path: ':edit_id' });
+    //this.route('edit-error');
+  });
 });
 
 export default Router;

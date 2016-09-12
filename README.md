@@ -61,6 +61,28 @@ Need a controller for comments in named outlet:
 
     ember generate controller post/comments
 
+Create a form component:
+
+    ember generate component form-post
+    ember install ember-buffered-proxy
+
+Add routes for admin use:
+
+    ember generate route admin/create
+    ember generate route admin/index
+    ember generate route admin/edit
+    ember generate route admin/edit-error
+
+Add mixin for error handling:
+
+    ember generate mixin application-errors
+
+Add edit controller
+
+    ember generate controller admin/edit
+
+Create code for listing, details pages and edit forms, etc.
+
 
 ## Prerequisites
 
