@@ -1,6 +1,6 @@
 {
   "name": "blog-admin",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "description": "Small description for blog-admin goes here",
   "private": true,
   "directories": {
@@ -42,7 +42,7 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-export-application-global": "^1.0.5",
     "ember-inflector": "^1.9.6",
-    "ember-jsonapi-resources": "^1.4.0",
+    "ember-jsonapi-resources": "^2.0.0-beta.2",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "glob": "^4.5.3",

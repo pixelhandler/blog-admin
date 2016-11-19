@@ -9,7 +9,7 @@ export default Ember.Route.extend(ApplicationErrorsMixin, {
   },
 
   model() {
-    return this.container.lookupFactory('model:post').create({
+    return Ember.getOwner(this)._lookupFactory('model:post').create({
       isNew: true,
       attributes: { date: new Date() }
     });

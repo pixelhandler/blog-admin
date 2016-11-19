@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import Resource from 'ember-jsonapi-resources/models/resource';
-import { attr, hasMany } from 'ember-jsonapi-resources/models/resource';
+import { attr, toMany } from 'ember-jsonapi-resources/models/resource';
 
 let AuthorModel = Resource.extend({
   type: 'authors',
@@ -8,7 +8,7 @@ let AuthorModel = Resource.extend({
 
   "name": attr('string'),
   "email": attr('string'),
-  "posts": hasMany('posts')
+  "posts": toMany('posts')
 });
 
 AuthorModel.reopenClass({
